@@ -6,6 +6,9 @@ alias ktx=kubectx
 alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc"
 
+# dotfiles (https://github.com/asankov/dotfiles)
+alias dot="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:$HOME/.poetry/bin
@@ -19,9 +22,6 @@ export GOPRIVATE=gitlab.bit9.local,carbonblack.com
 export GOPROXY=https://artifactory-pub.bit9.local/artifactory/api/go/go
 
 export AWS_PROFILE=saml
-
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/asankov/.oh-my-zsh"
