@@ -21,7 +21,11 @@ export GONOSUMDB=*
 export GOPRIVATE=gitlab.bit9.local,carbonblack.com
 export GOPROXY=https://artifactory-pub.bit9.local/artifactory/api/go/go
 
+
 source <(kubectl completion zsh)
+
+# 1PASSWORD AUTOCOMPLETION
+eval "$(op completion zsh)"; compdef _op op
 
 export KUBE_EDITOR=nvim
 
