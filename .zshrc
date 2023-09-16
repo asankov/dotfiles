@@ -11,6 +11,8 @@ alias t="terraform"
 alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc"
 
+alias python="python3 "
+
 ## END ALIASES
 
 export GOPATH=/Users/asankov/go
@@ -21,6 +23,9 @@ export GONOSUMDB=*
 export GOPRIVATE=gitlab.bit9.local,carbonblack.com
 export GOPROXY=https://artifactory-pub.bit9.local/artifactory/api/go/go
 
+# LOAD COMPDEF FUNCTION
+autoload -Uz compinit
+compinit
 
 source <(kubectl completion zsh)
 
@@ -32,7 +37,7 @@ export KUBE_EDITOR=nvim
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/asankov/.oh-my-zsh"
 
-ZSH_THEME="candy"
+ZSH_THEME="agnoster"
 
 # This is the default user of my laptop
 # and this env here prevents the "agnoster" theme for showing me the user name
@@ -86,14 +91,12 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# enable zsh syntax highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/asankov/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/asankov/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/asankov/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/asankov/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+# Enable zsh syntax highlighting.
+# To active it on a new machine install it via brew:
+#     brew install zsh-syntax-highlighting
+# 
+# Full docs: https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 ## FUNCTIONS
@@ -108,3 +111,9 @@ function aws_profile {
 }
 
 ## END FUNCTIONS
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/asankov/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/asankov/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/asankov/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/asankov/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
