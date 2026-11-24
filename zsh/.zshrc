@@ -6,6 +6,8 @@ alias kgp="kubectl get pods "
 export PATH=$PATH:$HOME/go/bin:/usr/local/bin
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
+export DELTA_PAGER='less -R --mouse'
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
