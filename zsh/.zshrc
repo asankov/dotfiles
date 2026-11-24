@@ -4,6 +4,7 @@ alias kgp="kubectl get pods "
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:$HOME/go/bin:/usr/local/bin
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -113,7 +114,7 @@ if [ -f '/Users/asankov/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Use
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/asankov/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/asankov/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
-. "$HOME/.local/bin/env"
+[ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
 export PATH="$HOME/.local/bin:$PATH"
 
 # pnpm

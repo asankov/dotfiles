@@ -24,10 +24,23 @@ install_stow() {
     fi
 }
 
+install_oh_my_zsh() {
+    if [ -d "$HOME/.oh-my-zsh" ]; then
+        return
+    fi
+
+    echo "Installing Oh My Zsh..."
+
+    RUNZSH=no CHSH=no KEEP_ZSHRC=yes sh -c \
+        "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" \
+        "" --unattended
+}
+
 main() {
     cd "$(dirname "$0")"
 
     install_stow
+    install_oh_my_zsh
 
     stow -t "$HOME" zsh oh-my-zsh
 
